@@ -1,0 +1,527 @@
+<!DOCTYPE html> 
+<html>
+<title>Spartan</title>
+<link rel="icon" type="image/x-icon" href="./images/icons8-spades-48.png" />
+<head>
+    <style type="text/css">
+        * {
+            font: 9pt monospace;
+        }
+        .card_group_odd {
+            display: inline-block;
+            margin: 2px;
+            border: 1px solid #bbb;
+            padding: 3px;
+            width: 2em;
+            background: white;
+            text-align: center;
+        }
+        .table {
+            border: 2px solid #ddd;
+            float: left;
+            width: 50%;
+        }
+        .mobile_only {
+            display: none;
+        }
+        td {
+            min-width: 150px;
+            background: #ddd;
+            /*border: 0 solid #aaa;
+            border-width: 0 2px 2px 0;*/
+
+        }
+
+        textarea {
+            height: 45em;
+            float: left;
+            width: 30%;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+<table id="poker-hand-details_table" class="
+                table  table-poker-hand-details">
+    <tbody>
+        <tr class="header th_row
+                        ">
+            <th title="Player">Player</th>
+            <th title="Pre Flop">Pre Flop</th>
+            <th title="Flop">Flop</th>
+            <th title="Turn">Turn</th>
+            <th title="River">River</th>
+        </tr>
+        <tr class="desktop_only ">
+            <td class="player dealer "><b>Kaleidoscope</b> (D)<br><span class="glow">96,325 </span><br><span class="cards_container"><span class="card_group_odd card_order_1 card_back cards_24x35">&nbsp;</span><span class="card_group_odd card_order_2 card_back cards_24x35">&nbsp;</span></span></td>
+            <td><span class="action_num">6. </span><b title="Ante">Ante </b><span class="glow">240 </span><br><span class="action_num">14. </span> Fold</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="desktop_only ">
+            <td class="player "><b>Valor</b><br><span class="glow">142,536 </span><br><span class="cards_container"><span class="card_group_odd card_order_1 card_back cards_24x35">&nbsp;</span><span class="card_group_odd card_order_2 card_back cards_24x35">&nbsp;</span></span></td>
+            <td><span class="action_num">7. </span><b title="Ante">Ante </b><span class="glow">240 </span><br><span class="action_num">8. </span><b title="Small Blind">SB </b><span class="glow">1200 </span><br><span class="action_num">15. </span> SitOut<br><span class="action_num">16. </span> Fold</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="desktop_only ">
+            <td class="player "><b>BULL0666</b><br><span class="glow">99,261 </span><br><span class="cards_container"><span class="card_group_odd card_order_1 card_jd cards_24x35">&nbsp;</span><span class="card_group_odd card_order_2 card_kd cards_24x35">&nbsp;</span></span></td>
+            <td><span class="action_num">1. </span><b title="Ante">Ante </b><span class="glow">240 </span><br><span class="action_num">9. </span><b title="Big Blind">BB </b><span class="glow">2400 </span><br><span class="action_num">17. </span><b title="Call">C: </b><span class="glow">2400 </span></td>
+            <td><span class="action_num">18. </span> Check<br><span class="action_num">20. </span><b title="Raise">R: </b><span class="glow">94221 </span>(All-In)<br><span class="action_num">22. </span><b title="Uncalled Bet">UB </b><span class="glow">63413 </span></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="desktop_only " id="test2">
+            <td class="player "><b>mad_desires</b><br><span class="glow">11,210 </span><br><span class="cards_container"><span class="card_group_odd card_order_1 card_back cards_24x35">&nbsp;</span><span class="card_group_odd card_order_2 card_back cards_24x35">&nbsp;</span></span></td>
+            <td id="test1"><span class="action_num">2. </span><b title="Ante">Ante </b><span class="glow">240 </span><br><span class="action_num">10. </span> Fold</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="desktop_only ">
+            <td class="player current_player "><b>Poker's Liar</b><br><span class="glow">35,848 </span><br><span class="cards_container"><span class="card_group_odd card_order_1 card_9h cards_24x35">&nbsp;</span><span class="card_group_odd card_order_2 card_9d cards_24x35">&nbsp;</span></span></td>
+            <td><span class="action_num">3. </span><b title="Ante">Ante </b><span class="glow">240 </span><br><span class="action_num">11. </span><b title="Raise">R: </b><span class="glow">4800 </span></td>
+            <td><span class="action_num">19. </span><b title="Bet">B: </b><span class="glow">6240 </span><br><span class="action_num">21. </span><b title="Call">C: </b><span class="glow">24568 </span>(All-In)</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="desktop_only ">
+            <td class="player "><b>Blunders whale</b><br><span class="glow">18,629 </span><br><span class="cards_container"><span class="card_group_odd card_order_1 card_back cards_24x35">&nbsp;</span><span class="card_group_odd card_order_2 card_back cards_24x35">&nbsp;</span></span></td>
+            <td><span class="action_num">4. </span><b title="Ante">Ante </b><span class="glow">240 </span><br><span class="action_num">12. </span> Fold</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="desktop_only ">
+            <td class="player "><b>Bigtimer465</b><br><span class="glow">130,188 </span><br><span class="cards_container"><span class="card_group_odd card_order_1 card_back cards_24x35">&nbsp;</span><span class="card_group_odd card_order_2 card_back cards_24x35">&nbsp;</span></span></td>
+            <td><span class="action_num">5. </span><b title="Ante">Ante </b><span class="glow">240 </span><br><span class="action_num">13. </span> Fold</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="community_cards desktop_only ">
+            <td>Community cards</td>
+            <td></td>
+            <td>
+                <div><span class="card_group_odd card_order_1 card_kh cards_24x35">&nbsp;</span><span class="card_group_odd card_order_2 card_2h cards_24x35">&nbsp;</span><span class="card_group_odd card_order_3 card_9s cards_24x35">&nbsp;</span></div>
+            </td>
+            <td>
+                <div><span class="card_group_odd card_order_1 card_6d cards_24x35">&nbsp;</span></div>
+            </td>
+            <td>
+                <div><span class="card_group_odd card_order_1 card_6h cards_24x35">&nbsp;</span></div>
+            </td>
+        </tr>
+        <tr class="total_pot desktop_only ">
+            <td>Total Pot</td>
+            <td class="text-right "><span class="glow">12,480 </span></td>
+            <td class="text-right "><span class="glow">74,096 </span></td>
+            <td class="text-right "><span class="glow">74,096 </span></td>
+            <td class="text-right "><span class="glow">74,096 </span></td>
+        </tr>
+        <!-- <tr class="mobile_only ">
+            <td>
+                <div class="header_mobile">Hand #390,264,040</div>
+                <div class="phase_action entry_conditions">
+                    <div>
+                        <div><b class="player_name">BULL0666</b><br><span class="glow">99,261 </span><br><span class="cards_container"><span class="card_group_odd card_order_1 card_jd cards_24x35">&nbsp;</span><span class="card_group_odd card_order_2 card_kd cards_24x35">&nbsp;</span></span></div>
+                    </div>
+                    <div><span class="action_num">1. </span>Ante <span class="glow">240 </span></div>
+                </div>
+                <div class="phase_action entry_conditions">
+                    <div>
+                        <div><b class="player_name">mad_desires</b><br><span class="glow">11,210 </span><br><span class="cards_container"><span class="card_group_odd card_order_1 card_back cards_24x35">&nbsp;</span><span class="card_group_odd card_order_2 card_back cards_24x35">&nbsp;</span></span></div>
+                    </div>
+                    <div><span class="action_num">2. </span>Ante <span class="glow">240 </span></div>
+                </div>
+                <div class="phase_action entry_conditions">
+                    <div>
+                        <div><b class="player_name">Poker's Liar</b><br><span class="glow">35,848 </span><br><span class="cards_container"><span class="card_group_odd card_order_1 card_9h cards_24x35">&nbsp;</span><span class="card_group_odd card_order_2 card_9d cards_24x35">&nbsp;</span></span></div>
+                    </div>
+                    <div><span class="action_num">3. </span>Ante <span class="glow">240 </span></div>
+                </div>
+                <div class="phase_action entry_conditions">
+                    <div>
+                        <div><b class="player_name">Blunders whale</b><br><span class="glow">18,629 </span><br><span class="cards_container"><span class="card_group_odd card_order_1 card_back cards_24x35">&nbsp;</span><span class="card_group_odd card_order_2 card_back cards_24x35">&nbsp;</span></span></div>
+                    </div>
+                    <div><span class="action_num">4. </span>Ante <span class="glow">240 </span></div>
+                </div>
+                <div class="phase_action entry_conditions">
+                    <div>
+                        <div><b class="player_name">Bigtimer465</b><br><span class="glow">130,188 </span><br><span class="cards_container"><span class="card_group_odd card_order_1 card_back cards_24x35">&nbsp;</span><span class="card_group_odd card_order_2 card_back cards_24x35">&nbsp;</span></span></div>
+                    </div>
+                    <div><span class="action_num">5. </span>Ante <span class="glow">240 </span></div>
+                </div>
+                <div class="phase_action entry_conditions">
+                    <div>
+                        <div><b class="player_name">Kaleidoscope</b> (D)<br><span class="glow">96,325 </span><br><span class="cards_container"><span class="card_group_odd card_order_1 card_back cards_24x35">&nbsp;</span><span class="card_group_odd card_order_2 card_back cards_24x35">&nbsp;</span></span></div>
+                    </div>
+                    <div><span class="action_num">6. </span>Ante <span class="glow">240 </span></div>
+                </div>
+                <div class="phase_action entry_conditions">
+                    <div>
+                        <div><b class="player_name">Valor</b><br><span class="glow">142,536 </span><br><span class="cards_container"><span class="card_group_odd card_order_1 card_back cards_24x35">&nbsp;</span><span class="card_group_odd card_order_2 card_back cards_24x35">&nbsp;</span></span></div>
+                    </div>
+                    <div><span class="action_num">7. </span>Ante <span class="glow">240 </span></div>
+                </div>
+                <div class="phase_action entry_conditions">
+                    <div>
+                        <div><b class="player_name">Valor</b><br><span class="cards_container"><span class="card_group_odd card_order_1 card_back cards_24x35">&nbsp;</span><span class="card_group_odd card_order_2 card_back cards_24x35">&nbsp;</span></span></div>
+                    </div>
+                    <div><span class="action_num">8. </span>SB <span class="glow">1200 </span></div>
+                </div>
+                <div class="phase_action entry_conditions">
+                    <div>
+                        <div><b class="player_name">BULL0666</b><br><span class="cards_container"><span class="card_group_odd card_order_1 card_jd cards_24x35">&nbsp;</span><span class="card_group_odd card_order_2 card_kd cards_24x35">&nbsp;</span></span></div>
+                    </div>
+                    <div><span class="action_num">9. </span>BB <span class="glow">2400 </span></div>
+                </div>
+            </td>
+            <td>
+                <div class="header_mobile">
+                    <div>Pre Flop<br><span class="glow">Pot=12,480 </span></div>
+                    <div></div>
+                </div>
+                <div class="phase_action ">
+                    <div>
+                        <div><b class="player_name">mad_desires</b></div>
+                    </div>
+                    <div><span class="action_num">10. </span>Fold</div>
+                </div>
+                <div class="phase_action ">
+                    <div>
+                        <div><b class="player_name">Poker's Liar</b></div>
+                    </div>
+                    <div><span class="action_num">11. </span>Raise <span class="glow">4800 </span></div>
+                </div>
+                <div class="phase_action ">
+                    <div>
+                        <div><b class="player_name">Blunders whale</b></div>
+                    </div>
+                    <div><span class="action_num">12. </span>Fold</div>
+                </div>
+                <div class="phase_action ">
+                    <div>
+                        <div><b class="player_name">Bigtimer465</b></div>
+                    </div>
+                    <div><span class="action_num">13. </span>Fold</div>
+                </div>
+                <div class="phase_action ">
+                    <div>
+                        <div><b class="player_name">Kaleidoscope</b></div>
+                    </div>
+                    <div><span class="action_num">14. </span>Fold</div>
+                </div>
+                <div class="phase_action ">
+                    <div>
+                        <div><b class="player_name">Valor</b></div>
+                    </div>
+                    <div><span class="action_num">15. </span>SitOut</div>
+                </div>
+                <div class="phase_action ">
+                    <div>
+                        <div><b class="player_name">Valor</b></div>
+                    </div>
+                    <div><span class="action_num">16. </span>Fold</div>
+                </div>
+                <div class="phase_action ">
+                    <div>
+                        <div><b class="player_name">BULL0666</b></div>
+                    </div>
+                    <div><span class="action_num">17. </span>Call <span class="glow">2400 </span></div>
+                </div>
+            </td>
+            <td>
+                <div class="header_mobile">
+                    <div>Flop<br><span class="glow">Pot=74,096 </span></div>
+                    <div>
+                        <div class="community_cards">
+                            <div><span class="card_group_odd card_order_1 card_kh cards_24x35">&nbsp;</span><span class="card_group_odd card_order_2 card_2h cards_24x35">&nbsp;</span><span class="card_group_odd card_order_3 card_9s cards_24x35">&nbsp;</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="phase_action ">
+                    <div>
+                        <div><b class="player_name">BULL0666</b></div>
+                    </div>
+                    <div><span class="action_num">18. </span>Check</div>
+                </div>
+                <div class="phase_action ">
+                    <div>
+                        <div><b class="player_name">Poker's Liar</b></div>
+                    </div>
+                    <div><span class="action_num">19. </span>Bet <span class="glow">6240 </span></div>
+                </div>
+                <div class="phase_action ">
+                    <div>
+                        <div><b class="player_name">BULL0666</b></div>
+                    </div>
+                    <div><span class="action_num">20. </span>Raise <span class="glow">94221 </span> (All-In)</div>
+                </div>
+                <div class="phase_action ">
+                    <div>
+                        <div><b class="player_name">Poker's Liar</b></div>
+                    </div>
+                    <div><span class="action_num">21. </span>Call <span class="glow">24568 </span> (All-In)</div>
+                </div>
+                <div class="phase_action ">
+                    <div>
+                        <div><b class="player_name">BULL0666</b></div>
+                    </div>
+                    <div><span class="action_num">22. </span>UB <span class="glow">63413 </span></div>
+                </div>
+            </td>
+            <td>
+                <div class="header_mobile">
+                    <div>Turn<br><span class="glow">Pot=74,096 </span></div>
+                    <div>
+                        <div class="community_cards">
+                            <div><span class="card_group_odd card_order_1 card_kh cards_24x35">&nbsp;</span><span class="card_group_odd card_order_2 card_2h cards_24x35">&nbsp;</span><span class="card_group_odd card_order_3 card_9s cards_24x35">&nbsp;</span></div>
+                        </div>
+                        <div class="community_cards">
+                            <div><span class="card_shift">&nbsp;</span><span class="card_group_odd card_order_1 card_6d cards_24x35">&nbsp;</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="phase_action_empty"></div>
+            </td>
+            <td>
+                <div class="header_mobile">
+                    <div>River<br><span class="glow">Pot=74,096 </span></div>
+                    <div>
+                        <div class="community_cards">
+                            <div><span class="card_group_odd card_order_1 card_kh cards_24x35">&nbsp;</span><span class="card_group_odd card_order_2 card_2h cards_24x35">&nbsp;</span><span class="card_group_odd card_order_3 card_9s cards_24x35">&nbsp;</span></div>
+                        </div>
+                        <div class="community_cards">
+                            <div><span class="card_shift">&nbsp;</span><span class="card_group_odd card_order_1 card_6d cards_24x35">&nbsp;</span></div>
+                        </div>
+                        <div class="community_cards">
+                            <div><span class="card_shift">&nbsp;</span><span class="card_group_odd card_order_1 card_6h cards_24x35">&nbsp;</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="phase_action_empty"></div>
+            </td>
+        </tr>
+        <tr class="round_summary mobile_only ">
+            <td>
+                <div class="header_mobile">Showdown </div>
+            </td>
+            <td>
+                <div class="player_summary">
+                    <div><b class="player_name">BULL0666</b></div>
+                    <div class="win_info"><b></b></div>
+                    <div class="showdown_combination">Two pairs, KK66</div>
+                </div>
+                <div class="player_summary">
+                    <div><b class="player_name">Poker's Liar</b></div>
+                    <div class="win_info"><b>Won <span class="glow">74,096 </span></b></div>
+                    <div class="showdown_combination">Full house, 99966</div>
+                </div>
+            </td>
+        </tr> -->
+    </tbody>
+</table>
+<!-- <textarea id="output"></textarea> -->
+</body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script>
+    /**
+     * Align all actions by action number
+     * 
+     * For each action,
+     *  Find action name (ante, SB, BB, raise, call, check)
+     *  Find value of the bet
+     * 
+     *  Find player's name
+     *  Find street
+     * 
+     *  Find hero's cards -
+     *  Find flop, turn, river cards
+     *  Find showdown cards if any
+     * 
+     **/
+
+    const $ = jQuery;
+    const debug = true,
+        box_out = false,
+        hero = "Poker's Liar";
+
+    let actions = [], players = [], table = [], street_stacks = {};
+    let actions_count = $(".action_num").length;
+
+    for (var i = $(".card_group_odd").length - 1; i >= 0; i--) {
+        card_group = $(".card_group_odd").eq(i);
+        classes = card_group.attr('class');
+        class_list = classes.split(" ")
+        card_class = class_list.filter((cls) => cls.length == 7);
+        if (card_class.length == 1) {
+            the_card = card_class[0].substr(5);
+            card_group.text(the_card)
+        }
+    } // .card_group_odd
+
+    for (var i = $(".player").length - 1; i >= 0; i--) {
+        player_td = $(".player").eq(i)
+        var hole_cards = player_td.find(".cards_container").find(".card_group_odd").map(function() {
+                return $(this).text()
+            }).get()
+        
+        player = {
+            name: player_td.find("b").text(),
+            stack: player_td.find(".glow").text().split(",").join("").split(" ").join(""),
+            hero: (hero == player_td.find("b").text()),
+            cards: hole_cards
+        }
+        players[i] = player
+    } //  players
+
+
+    table.flop = $(".community_cards").find("td").eq(2).find(".card_group_odd").map(function() {
+        return $(this).text()
+    }).get()
+    table.turn = $(".community_cards").find("td").eq(3).find(".card_group_odd").text();
+    table.river = $(".community_cards").find("td").eq(4).find(".card_group_odd").text();
+
+    
+
+    for (var i = $(".community_cards").length - 1; i >= 0; i--) {
+        $(".community_cards").eq(i)
+    }
+
+    for (var i = 1; i <= actions_count; i++) {
+        // actions_count[i]
+        // counter = $('.action_num:contains("' + i + '.")');
+        counter = $('.action_num').eq(i)
+        num = parseInt(counter.text());
+
+        td = counter.closest("td");
+        action = counter.next();
+        action_text = action.attr('title');
+        if (!action_text) {
+            action_text = action.text();
+        }
+        if (["Ante", "Big Blind", "Small Blind"].some(actn => (actn == action_text))) {
+            action_text = "posts " + action_text
+        } else {
+            action_text = action_text + "s"
+        }
+
+        value = action.next(".glow").text();
+            // value.css('background-color', 'yellow');
+
+        td_row_count = $("#poker-hand-details_table > tbody > tr").index(counter.closest("tr"))
+        player = $("#poker-hand-details_table > tbody > tr").eq(td_row_count).find(".player").find("b").text();
+
+        td_col_count = counter.closest("tr").find("td").index(td);
+        
+        street = $("tr.header > th").eq(td_col_count).text();
+
+        the_action = {
+            num, 
+            action: action_text, 
+            value, 
+            player, 
+            street
+        }
+        actions[num] = the_action;
+        // debug && console.log(action);
+
+    } // actions_count loop
+
+// debug && console.log(JSON.stringify(actions))
+
+box_out && $("#output").val("")
+
+// Players
+for (key in players) {
+    all_players = $("#output").val()
+    player = players[key]
+    the_line = `Seat ${parseInt(key)+1}: ${player.name} (${player.stack} in chips)`
+    
+    debug && console.log(the_line)
+    
+    // all_players += "\n" + the_line
+    box_out && $("#output").val(all_players)
+}
+
+// Pre-flop
+var stage = "pre-flop"
+for (key in actions) {
+    action = actions[key]
+    all_actions = $("#output").val();
+    action_action = action.action
+    if (action_action == "") {
+        // what am I doing here?
+        // 
+    }
+
+    the_line = `${action.player}: ${action.action} ${action.value}`
+
+    if (action.action == "posts Big Blind") {
+        the_line = the_line + "\n*** HOLE CARDS ***"
+
+        the_hero = players.filter((plyr) => plyr.hero)[0]
+        hero_name = the_hero.name
+        hero_cards = the_hero.cards.map((card) => card).join(" ")
+        the_line = the_line + `\nDealt to ${hero_name} [${hero_cards}]`
+    }
+    if (action.street == "Flop") {
+        if (stage == "pre-flop") {
+            the_line = `*** FLOP *** [${table.flop.join(" ")}]\n` + the_line
+        }
+        stage = "flop"
+    }
+    if (action.street == "Turn") {
+        if (stage == "flop") {
+            the_line = `*** TURN *** [] [${table.turn}]\n` + the_line
+        }
+        stage = "turn"
+    }
+    if (action.street == "River") {
+        if (stage == "turn") {
+            the_line = `*** RIVER *** [] [${table.turn}] [${table.river}]\n` + the_line
+        }
+        stage = "river"
+    }
+    
+    debug && console.log(the_line)
+
+    all_actions += "\n" + the_line
+    box_out && $("#output").val(all_actions)
+}
+
+
+for (key in actions) {
+    action = actions[key]
+    all_actions = $("#output").val();
+    // the_line = `On street ${action.street} player ${action.player} did ${action.action} for value ${action.value}`;
+    all_actions += "\n" + the_line
+
+    debug && console.log(the_line)
+
+    box_out && $("#output").val(all_actions)
+}
+
+</script>
+</html>
+
+
+<!--
+Seat 1: adevlupec (53368 in chips) 
+Seat 2: Dette32 (10845 in chips) 
+Seat 3: Drug08 (9686 in chips) 
+Seat 4: FluffyStutt (11326 in chips) 
+FluffyStutt: posts small blind 50
+adevlupec: posts big blind 100
+*** HOLE CARDS ***
+Dealt to FluffyStutt [2h Ks]
+FluffyStutt said, "nh"
+Dette32: calls 100
+Drug08: calls 100
+FluffyStutt: folds 
+adevlupec: checks 
+
+-->

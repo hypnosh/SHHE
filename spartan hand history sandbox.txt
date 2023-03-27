@@ -1,0 +1,39 @@
+.btn-history-round-next
+.btn-history-round-prev
+
+.hand-btn.active > .hand
+.hand-btn.active > .result -- .result-positive & .result-negative
+
+#poker-hand-details_table
+	.desktop_only - each
+		.player > b -- name
+		.player.dealer -- button
+		.player > .glow - stack
+		.player > .cards_container
+			.card_ac -- will denote card name (Ace of clubs)
+			.card_qh -- will denote card name (Queen of hearts)
+		.player.current_player -- hero	
+
+		td.nth-child(1) - pre-flop
+		td.nth-child(2) - flop
+		td.nth-child(3) - turn
+		td.nth-child(4) - river
+			.action_num - action number
+			b[title=Ante] - ante label
+			b[title=Ante] + .flow - ante value
+			b[title=Call] - call label
+			b[title=Call] + .flow - call value
+			b[title=Small Blind] - Small Blind label
+			b[title=Small Blind] + .flow - Small Blind value
+			b[title=Big Blind] - Big Blind labelspartan to pokerstars translate
+			b[title=Big Blind] + .flow - Big Blind value
+
+			
+		
+
+
+
+
+$(".btn-history-round-next").click()
+
+$("#poker-hand-details_table").
