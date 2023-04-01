@@ -760,7 +760,7 @@ for (var i = 1; i <= actions_count-1; i++) {
     if (["Ante", "Big Blind", "Small Blind"].some(actn => (actn == action_text))) {
         action_text = "posts " + action_text
     } else if (action_text == "") {
-        // Fold, Check, 
+        // Fold, Check
         
         split_actions = td.html().split('<span class="action_num">')
         blnk_actn = split_actions.filter((actn) => actn.indexOf(num) > -1)[0].split(" ").pop()
@@ -775,6 +775,11 @@ for (var i = 1; i <= actions_count-1; i++) {
     td_row_count = $("#poker-hand-details_table > tbody > tr").index(counter.closest("tr"))
     player = $("#poker-hand-details_table > tbody > tr").eq(td_row_count).find(".player").find("b").text();
 
+    // find player in players
+    player_in_players = players.filter((plyr) => (plyr.name == player))
+    player_in_players.folded = (action_text == "Folds")
+
+    // debug && console.log({player_in_players})
     td_col_count = counter.closest("tr").find("td").index(td);
 
     street = $("tr.header > th").eq(td_col_count).text();
@@ -854,19 +859,20 @@ debug && console.log("*** SHOW DOWN ***")
 for (key in players) {
     // if player != hero, and cards visible, then
     // name: shows [hand] (hand name)
-    // if player != hero, cards not visible 
+    // if player != hero, cards not visible and not folded
+    // 
+    // adevlupec collected 332 from pot
 }
 
-// for (key in actions) {
-//     action = actions[key]
-//     all_actions = $("#output").val();
-//     // the_line = `On street ${action.street} player ${action.player} did ${action.action} for value ${action.value}`;
-//     all_actions += "\n" + the_line
+// Write Summary
+debug && console.log("*** SUMMARY ***")
+// Total pot 350 | Rake 18 
+// Board [8h 7s 8d Th 2c]
+// Seat 1: adevlupec (big blind) showed [Qs Ts] and won (332) with two pair, Tens and Eights
+// Seat 2: Dette32 mucked [5s Kc]
+// Seat 3: Drug08 (button) mucked [4d 6h]
+// Seat 4: FluffyStutt (small blind) folded before Flop
 
-//     debug && console.log(the_line)
-
-//     box_out && $("#output").val(all_actions)
-// }
 </script>
 
 </html>
